@@ -24,8 +24,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14
-      - name: yarn install & test
+          cache: npm
+      - name: npm install & test
         run: |
+          npm install
           npm run lint
           npm run build          
           
