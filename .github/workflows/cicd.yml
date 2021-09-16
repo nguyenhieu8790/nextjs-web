@@ -26,15 +26,15 @@ jobs:
           npm build
           
       - name: Generate deployment
-        run: zip -r deploy.zip . -x '*.git*'
+        run: zip -r deploy.zip . -x '*.git*' 'node_modules*'
 
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v18
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: webnextjs
-          environment_name: webnextjs-demo
-          version_label: latest-${{github.sha}}
+          application_name: test200
+          environment_name: Test200-env
+          version_label: main-${{github.sha}}
           region: ap-southeast-1
           deployment_package: deploy.zip	
