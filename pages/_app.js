@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-hieunv3 test
+var testContext = 15;
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
