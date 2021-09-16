@@ -25,6 +25,7 @@ jobs:
       - name: Generate deployment
         run: zip -r deploy.zip . -x '*.git*' 'node_modules*'
 
+# webapp url: http://test200-env.eba-kv5wurvq.ap-southeast-1.elasticbeanstalk.com/
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v18
         with:
